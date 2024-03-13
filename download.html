@@ -1,0 +1,496 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="KD">
+    <meta name="author" content="">
+    <!--    Project Name   -->
+    <title>Hybrid Queries Benchmark</title>
+
+    <!-- <link rel="shortcut icon" href="./img/main.png" type="image/x-icon"> -->
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link
+        href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS-->
+    <link href="css/general.css" rel="stylesheet">
+
+    <!-- Owl-Carousel -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- footer css -->
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/download.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/iconfont.js"></script>
+    <link rel="stylesheet" href="styles/default.min.css">
+    <script src="js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <script src="js/vue.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script> <!-- Modernizr /-->
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/script.js"></script>
+    <!-- StikyMenu -->
+    <script src="js/stickUp.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.navbar-default').stickUp();
+
+            });
+        });
+    </script>
+
+    <!-- Smoothscroll -->
+    <script type="text/javascript" src="js/jquery.corner.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="js/classie.js"></script>
+    <script src="js/uiMorphingButton_inflow.js"></script>
+    <!-- Magnific Popup core JS file -->
+    <script src="js/jquery.magnific-popup.js"></script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+
+    <!-- NavBar-->
+    <nav class="navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">Hybrid Queries Benchmark</a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="menuItem"><a href="index.html">Home</a></li>
+                    <li class="menuItem"><a href="download.html">Download</a></li>
+                    <!-- <li class="menuItem"><a href="tutorial.html">Tutorial</a></li>
+                    <li class="menuItem"><a href="cc.html">Citation & Contact</a></li> -->
+                    <li class="menuItem"><a
+                            href="https://github.com/HybridQueriesBenchmark/HybridQueriesBenchmark.github.io"
+                            target="_blank">
+                            <button
+                                style="color: white; background-color: #62c0a0; border: none; border-radius: 5px; padding: 1px 5px;">
+                                <span>GitHub</span>
+                            </button>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <p class="title">
+            Download Dataset and Dataset Format
+        </p>
+        <p class="content">
+            In this page, we will introduce how to download the dataset and the dataset format.
+        </p>
+        <p class="sub_title">
+            <b>Download</b>
+        </p>
+        <p class="content">
+            You can get the datasets from the <a style="color:#3579f6"
+                href="https://github.com/HybridQueriesBenchmark/HybridQueriesBenchmark.github.io/releases/tag/v1.0.0">GitHub
+                Release Page</a>
+            <br>
+            If you just want to get one dataset, you can download it from the following links:
+        </p>
+        <ul>
+            <li><a style="color:#3579f6"
+                    href="https://github.com/HybridQueriesBenchmark/HybridQueriesBenchmark.github.io/releases/download/v1.0.0/single_table_fungi_dataset.zip">single
+                    table fungi dataset</a> </li>
+            <li>
+                <a style="color:#3579f6"
+                    href="https://github.com/HybridQueriesBenchmark/HybridQueriesBenchmark.github.io/releases/download/v1.0.0/multi_table_movie_dataset.zip">multi
+                    table movie dataset</a>
+            </li>
+        </ul>
+        <p class="content">
+            The dataset is stored in the form of a zip file. After downloading, you can unzip it and get the dataset.
+            For more details about data format, please refer to the following section.
+        </p>
+
+        <p class="sub_title">
+            <b>Single table fungi dataset</b>
+        </p>
+
+        <p class="content">
+            This dataset involves a single table. After unzipping the dataset, you will get the following files:
+        </p>
+
+        <div class="code">
+            <pre><code class="language-bash">single_table_fungi_dataset
+├── answers
+│   ├── learn_knn.csv
+│   └── test_knn.csv
+├── bool_filter
+│   ├── learn_filter.csv
+│   └── test_filter.csv
+├── metadata
+│   └── base_metadata.csv
+└── vectors
+    ├── base_vectors.npy
+    ├── learn_vectors.npy
+    └── test_vectors.npy</code></pre>
+        </div>
+        <p class="content">
+            There are four folders in the dataset, including <code>answers</code>, <code>bool_filter</code>,
+            <code>metadata</code> and <code>vectors</code>. Now, let's explain the content of each folder.
+        <ul>
+            <li>
+                <b>answers</b>: This folder contains the reference results of learn queries and test queries. There are
+                two files in this folder, including <code>learn_knn.csv</code> and <code>test_knn.csv</code>. The former
+                is the reference results of learn queries, and the latter is the reference results of test queries. Both
+                of the files are in the form of a CSV file. They contain the following columns:
+                <ul>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
+                    <li><code>max_distance</code>: type is <code>float</code>. This number is the L2 distance between
+                        query vector and the 100-th nearest vector. Since there may be multiple vectors with the same
+                        distance as the query vector, this property is used to determine whether the query result
+                        returned by the system is also a correct result.</li>
+                    <li><code>L2_nearest_ids</code>: type is <code>list</code>, each element in the list is from the
+                        <code>id</code> column in <code>base_metadata.csv</code>, and the list is sorted by L2 distance
+                        in ascending order.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b>bool_filter</b>: This folder contains the boolean expressions of learn queries and test queries.
+                There
+                are two files in this folder, including <code>learn_filter.csv</code> and <code>test_filter.csv</code>.
+                The columns of the two files are the same, including:
+                <ul>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
+                    <li><code>expression_num</code>: type is <code>int</code>, the number of sub-expressions in a
+                        boolean expression</li>
+                    <li><code>bool_expression</code>: type is <code>str</code>, the boolean expression of the query</li>
+                </ul>
+            </li>
+            <li>
+                <b>metadata</b>: This folder contains the metadata of the dataset. There is only one file in this
+                folder, including <code>base_metadata.csv</code>. There are 295,938 rows in this file. The columns of
+                the file are as follows:
+                <ul>
+                    <li><code>id</code>: type is <code>int</code>, the id of the base vector and corresponding metadata
+                    </li>
+                    <li><code>year</code>: type is <code>int</code></li>
+                    <li><code>month</code>: type is <code>int</code></li>
+                    <li><code>day</code>: type is <code>int</code>. The three columns represent when the images were
+                        taken in the Danish Fungi dataset</li>
+                    <li><code>countryCode</code>: type is <code>str</code>, country where the images were token</li>
+                    <li><code>scientificName</code>: type is <code>str</code>, the scientific name the fungi in original
+                        image</li>
+                    <li><code>Substrate</code>: type is <code>str</code>, the substrate of the fungi in original image
+                    </li>
+                    <li><code>Latitude</code>: type is <code>float</code>, the latitude that the image token in</li>
+                    <li><code>Longitude</code>: type is <code>float</code>, the longitude that the image token in</li>
+                    <li><code>Habitat</code>: type is <code>str</code>, the habitat of the fungi in original image</li>
+                    <li><code>poisonous</code>: type is <code>bool</code>, whether the fungi specie is poisonous to
+                        human</li>
+                </ul>
+            </li>
+            <li>
+                <b>vectors</b>: This folder contains the base vectors, learn vectors and test vectors. There are three
+                files in this folder, including <code>base_vectors.npy</code>, <code>learn_vectors.npy</code> and
+                <code>test_vectors.npy</code>. The three files are in the form of a numpy array. The shape of the three
+                files is <code>(295938, 768)</code>, <code>(60832, 768)</code> and <code>(60225, 768)</code>
+                respectively, which is the original train, validation and test split in Danish Fungi dataset. The first
+                dimension of the three files is the number of vectors, and the second dimension
+                is the dimension of the vector. The vectors are extracted from the images in the Danish Fungi dataset
+                using the pretrained <code>vit_small_patch16_224</code> model in timm library. The rows in the numpy
+                array correspond to the rows in the corresponding csv file, based on which the database can be built and
+                queries made.
+            </li>
+        </ul>
+        </p>
+
+        <p class="sub_title">
+            <b>Multi table fungi dataset</b>
+        </p>
+
+        <p class="content">
+            This dataset involves multiple tables. After unzipping the dataset, you will get the following files:
+        </p>
+
+        <div class="code">
+            <pre><code class="language-bash">multi_table_movie_dataset
+├── answers
+│   ├── learn_knn.csv
+│   └── test_knn.csv
+├── bool_filter
+│   ├── learn_filter.csv
+│   └── test_filter.csv
+├── metadata
+│   ├── conversations.csv
+│   ├── genres.csv
+│   ├── movies.csv
+│   ├── movies_genres.csv
+│   ├── speakers.csv
+│   └── utterances.csv
+└── vectors
+    ├── base_vectors.npy
+    ├── learn_vectors.npy
+    └── test_vectors.npy</code></pre>
+        </div>
+
+        <p class="content">
+            Similar to the single table fungi dataset, there are four folders in the dataset, including
+            <code>answers</code>, <code>bool_filter</code>, <code>metadata</code> and <code>vectors</code>. Now, let's
+            explain the content of each folder.
+        <ul>
+            <li>
+                <b>answers</b>: This folder contains the reference results of learn queries and test queries. There are
+                two files in this folder, including <code>learn_knn.csv</code> and <code>test_knn.csv</code>. The former
+                is the reference results of learn queries, and the latter is the reference results of test queries. Both
+                of the files are in the form of a CSV file. They contain the following columns:
+                <ul>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
+                    <li><code>max_distance</code>: type is <code>float</code>. This number is the L2 distance between
+                        query vector and the 100-th nearest vector. Since there may be multiple vectors with the same
+                        distance as the query vector, this property is used to determine whether the query result
+                        returned by the system is also a correct result.</li>
+                    <li><code>L2_nearest_ids</code>: type is <code>list</code>, each element in the list is from the
+                        <code>utterance_id</code> column in <code>utterances.csv</code>, and the list is sorted by L2
+                        distance in ascending order.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b>bool_filter</b>: This folder contains the boolean expressions of learn queries and test queries.
+                There are two files in this folder, including <code>learn_filter.csv</code> and
+                <code>test_filter.csv</code>.
+                Since this dataset contains multiple tables, the query involves multiple tables join and the boolean
+                expressions are more complex than the single table dataset, and the columns of the two files are as
+                follows:
+                <ul>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
+                    <li><code>select_clause</code>: type is <code>str</code> </li>
+                    <li><code>join_clause</code>: type is <code>str</code></li>
+                    <li><code>where_clause</code>: type is <code>str</code>. Concatenating these three columns together
+                        gives us an SQL-style query, and user can easily translate it into the syntax required by other
+                        databases. Here is an example query:
+                        <div class="code">
+                            <pre><code class="language-sql">SELECT
+    DISTINCT utterances.utterance_id
+FROM
+    utterances
+    JOIN conversations ON utterances.conversation_id = conversations.conversation_id
+    JOIN movies ON conversations.movie_id = movies.movie_id
+    JOIN movies_genres ON movies_genres.movie_id = movies.movie_id
+WHERE
+    conversations.movie_id != 351
+    OR movies_genres.genre_id = 23
+    OR utterances.reply_to = -1
+    OR conversations.conversation_id > 203908
+    AND conversations.conversation_id != 606452
+    AND conversations.movie_id = 206;</code></pre>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b>metadata</b>: This folder contains the metadata of the dataset. There is only 6 files in this
+                folder, including <code>conversations.csv</code>, <code>genres.csv</code>, <code>movies.csv</code>,
+                <code>movies_genres.csv</code>, <code>speakers.csv</code> and <code>utterances.csv</code>. Now, let's
+                explain the content of each file.
+                <ul>
+                    <li>
+                        <code>conversations.csv</code>: This file contains the metadata of conversations. The columns of
+                        the file are as follows:
+                        <ul>
+                            <li><code>conversation_id</code>: type is <code>int</code>, the id of the conversation</li>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>genres.csv</code>: This file contains the metadata of genres. The columns of the file are
+                        as
+                        follows:
+                        <ul>
+                            <li><code>genre_id</code>: type is <code>int</code>, the id of the genre</li>
+                            <li><code>genre</code>: type is <code>str</code>, the name of the genre</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>movies.csv</code>: This file contains the metadata of movies. The columns of the file are
+                        as
+                        follows:
+                        <ul>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
+                            <li><code>movie_name</code>: type is <code>str</code>, the name of the movie</li>
+                            <li><code>release_year</code>: type is <code>int</code>, the release year of the movie</li>
+                            <li><code>rating</code>: type is <code>float</code>, the rating of the movie</li>
+                            <li><code>votes</code>: type is <code>int</code>, the number of votes of the movie</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>movies_genres.csv</code>: This file contains the metadata of the relationship between
+                        movies
+                        and genres. The columns of the file are as follows:
+                        <ul>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
+                            <li><code>genre_id</code>: type is <code>int</code>, the id of the genre</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>speakers.csv</code>: This file contains the metadata of speakers. The columns of the file
+                        are as follows:
+                        <ul>
+                            <li><code>speaker_id</code>: type is <code>int</code>, the id of the speaker</li>
+                            <li><code>character_name</code>: type is <code>str</code>, the name of the character</li>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
+                            <li><code>gender</code>: type is <code>char</code>, the gender of the speaker in the movie
+                            </li>
+                            <li><code>credit_pos</code>: type is <code>int</code>, the credit position of the speaker in
+                                the movie</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>utterances.csv</code>: This file contains the metadata of utterances. The columns of the
+                        file
+                        are as follows:
+                        <ul>
+                            <li><code>utterance_id</code>: type is <code>int</code>, the id of the utterance</li>
+                            <li><code>conversation_id</code>: type is <code>int</code>, the id of the conversation that
+                                the utterance corresponding to</li>
+                            <li><code>speaker_id</code>: type is <code>int</code>, the id of the speaker</li>
+                            <li><code>reply_to</code>: type is <code>int</code>, the id of the utterance that the
+                                current utterance replies to, <code>-1</code> means that this utterance is first
+                                utterance in the conversation</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b>vectors</b>: This folder contains the base vectors, learn vectors and test vectors. There are three
+                files in this folder, including <code>base_vectors.npy</code>, <code>learn_vectors.npy</code> and
+                <code>test_vectors.npy</code>. The three files are in the form of a numpy array. The shape of the three
+                files is <code>(284713, 768)</code>, <code>(10000, 768)</code> and <code>(10000, 768)</code>
+                respectively. The first dimension of the three files is the number of vectors, and the second dimension
+                is the dimension of the vector. The vectors are extracted from the texts in the Cornell Movie-Dialogs Corpus
+                using the pretrained <code>bert-base-uncased</code> model in transformers library. The rows in the numpy
+                array correspond to the rows in the corresponding csv file, based on which the database can be built and
+                queries made.
+            </li>
+        </ul>
+        </p>
+
+        <p class="content">
+            Here is the sample SQL script to create the tables for the multi table movie dataset.
+        </p>
+
+        <div class="code">
+            <pre><code class="language-sql">DROP TABLE if exists `movies`;
+CREATE TABLE `movies` (
+    movie_id int,
+    movie_name varchar(100),
+    release_year int,
+    rating float,
+    votes int,
+    primary key (movie_id)
+);
+
+DROP TABLE if exists `genres`;
+CREATE TABLE `genres` (
+    genre_id int,
+    genre varchar(20),
+    primary key (genre_id)
+);
+
+DROP TABLE if exists `movies_genres`;
+CREATE TABLE `movies_genres` (
+    movie_id int references movies(movie_id),
+    genre_id int references genres(genre_id),
+    foreign key (movie_id) references movies(movie_id),
+    foreign key (genre_id) references genres(genre_id)
+);
+
+DROP TABLE if exists `speakers`;
+CREATE TABLE `speakers` (
+    speaker_id int,
+    character_name varchar(100),
+    movie_id int references movies(movie_id),
+    gender char(1),
+    credit_pos int,
+    primary key (speaker_id),
+    foreign key (movie_id) references movies(movie_id)
+);
+
+DROP TABLE if exists `conversations`;
+CREATE TABLE `conversations` (
+    conversation_id int,
+    movie_id int references movies(movie_id),
+    primary key (conversation_id),
+    foreign key (movie_id) references movies(movie_id)
+);
+
+DROP TABLE if exists `utterances`;
+CREATE TABLE `utterances` (
+    utterance_id int,
+    conversation_id int references conversations(conversation_id),
+    speaker_id int references speakers(speaker_id),
+    reply_to int,
+    primary key (utterance_id),
+    foreign key (conversation_id) references conversations(conversation_id),
+    foreign key (speaker_id) references speakers(speaker_id)
+);</code></pre>
+        </div>
+
+    </div>
+
+
+    <!-- footer  -->
+    <div id="footer">
+        <p>
+            Copyright &copy; 2024 - CSE, NJUST
+            <br>
+        </p>
+    </div>
+
+</body>
+
+</html>

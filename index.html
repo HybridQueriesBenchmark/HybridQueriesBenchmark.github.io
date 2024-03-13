@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="KD">
+    <meta name="author" content="">
+    <!--    Project Name   -->
+    <title>Hybrid Queries Benchmark</title>
+
+    <!-- <link rel="shortcut icon" href="./img/main.png" type="image/x-icon"> -->
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link
+        href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS-->
+    <link href="css/general.css" rel="stylesheet">
+
+    <!-- Owl-Carousel -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- footer css -->
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/iconfont.js"></script>
+
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="css/default.min.css">
+    <script src="js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <script src="js/vue.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script> <!-- Modernizr /-->
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/script.js"></script>
+    <!-- StikyMenu -->
+    <script src="js/stickUp.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.navbar-default').stickUp();
+
+            });
+        });
+    </script>
+
+    <!-- Smoothscroll -->
+    <script type="text/javascript" src="js/jquery.corner.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="js/classie.js"></script>
+    <script src="js/uiMorphingButton_inflow.js"></script>
+    <!-- Magnific Popup core JS file -->
+    <script src="js/jquery.magnific-popup.js"></script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+
+    <!-- NavBar-->
+    <nav class="navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">Hybrid Queries Benchmark</a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="menuItem"><a href="index.html">Home</a></li>
+                    <li class="menuItem"><a href="download.html">Download</a></li>
+                    <!-- <li class="menuItem"><a href="tutorial.html">Tutorial</a></li>
+                    <li class="menuItem"><a href="cc.html">Citation & Contact</a></li> -->
+                    <li class="menuItem"><a
+                            href="https://github.com/HybridQueriesBenchmark/HybridQueriesBenchmark.github.io"
+                            target="_blank">
+                            <button
+                                style="color: white; background-color: #62c0a0; border: none; border-radius: 5px; padding: 1px 5px;">
+                                <span>GitHub</span>
+                            </button>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="quick_start" style="text-align:center">
+        <p class="sub_title" style="font-size:32px">
+            <b>Benchmark for Hybrid Queries</b>
+            <br />
+            <b>of Boolean Filter and Vector Similarity Search</b>
+        </p>
+        <p class="sub_content" style="text-align:justify">
+            With the increasing popularity of Large Language Models (LLMs) represented by ChatGPT, vector similarity
+            search has become an important part of modern database systems. Usually, the real-world queries are hybrid,
+            which means they contain both boolean filters and vector similarity search. For example, in a product search
+            system, users may want to search products with a image and a price range. However, the current benchmarks
+            for vector similarity search, such as SIFT [1], do not support hybrid queries. To fill this gap, we propose
+            a
+            new benchmark for hybrid queries of boolean filter and vector similarity search. We hope this benchmark can
+            help researchers and engineers to evaluate the performance of their systems and to develop new algorithms.
+        </p>
+
+        <!-- <br> -->
+        <img style="max-width:80%; height:auto; margin-left:40px" src="img/main.png">
+    </div>
+
+    <div class="quick_start">
+        <p class="sub_title">
+            <b>Introduction</b>
+        </p>
+        <p class="sub_content">
+            The benchmark contains two datasets, one contains single table, and the other involves join multiple tables.
+            The first dataset is based on the Danish Fungi [2], and the second dataset is based on the Cornell
+            Movie-Dialogs Corpus [3]. These two datasets are in the field of computer vision and natural language
+            processing, respectively, and both have rich metadata.
+        </p>
+        <p class="sub_content">
+            We processed the original datasets and generated the benchmark datasets. The metadata are in the form of
+            CSV files, and the images and texts are processed into 768-dimensional vectors using ViT [4] and BERT [5]
+            respectively. The boolean expressions are generated based on the metadata, and we guarantee that the number
+            of rows that satisfy the boolean expressions is bigger than 100. The vectors in the datasets are in the form
+            of numpy array [6], you can use the numpy library to load the vectors.
+        </p>
+        <p class="sub_content">
+            Both of the datasets are divided into base set, learn set and test set. The base set contains vectors and
+            metadata, the learn set and test set contains vectors and boolean expressions. For each query in the learn
+            set and test set, we provide the top-100 rows that satisfy the boolean expressions, ordered by the L2
+            distance of query vector and base vectors. The learn set is used to tune the parameters of the system if
+            necessary, and the test set is used to evaluate the performance of the system.
+        </p>
+        <p class="sub_content">
+            When it comes to the evaluating metrics, usually we use the recall to evaluate the performance of the pure
+            vector similarity search. In the hybrid queries, since the boolean filter is also involved, we must
+            guarantee that the rows returned by the system satisfy the boolean expressions. Therefore, we propose a new
+            metric, called hybrid recall, to evaluate the performance of the system. The hybrid recall is defined the
+            intersection of the number of rows returned by the system that satisfy the boolean expression with the
+            reference results, divided by K in K-NN search, which is 100 in this benchmark. The hybrid recall is between
+            0 and 1, and the bigger the better.
+        </p>
+        <p class="sub_content">
+            The benchmark is open-source and can be downloaded from <a href="download.html" style="color:#3579f6">this
+                page</a>. We hope that the benchmark can help researchers and engineers to evaluate the performance of
+            their systems and to develop
+            new algorithms.
+        </p>
+    </div>
+
+    <div class="quick_start">
+        <p class="sub_title">
+            <b>References</b>
+        </p>
+        <div class="sub_content">
+            <ol>
+                <li>
+                    Jégou H, Tavenard R, Douze M, et al. Searching in one billion vectors: re-rank with source
+                    coding[C]//2011 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP).
+                    IEEE, 2011: 861-864.
+                </li>
+                <li>
+                    Picek L, Šulc M, Matas J, et al. Danish fungi 2020-not just another image recognition
+                    dataset[C]//Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2022:
+                    1525-1535.
+                </li>
+                <li>
+                    Danescu-Niculescu-Mizil C, Lee L. Chameleons in imagined conversations: A new approach to
+                    understanding coordination of linguistic style in dialogs[J]. arXiv preprint arXiv:1106.3077, 2011.
+                </li>
+                <li>
+                    Dosovitskiy A, Beyer L, Kolesnikov A, et al. An image is worth 16x16 words: Transformers for image
+                    recognition at scale[J]. arXiv preprint arXiv:2010.11929, 2020.
+                </li>
+                <li>
+                    Devlin J, Chang M W, Lee K, et al. Bert: Pre-training of deep bidirectional transformers for
+                    language understanding[J]. arXiv preprint arXiv:1810.04805, 2018.
+                </li>
+                <li>
+                    https://numpy.org
+                </li>
+            </ol>
+        </div>
+
+    </div>
+
+    <!-- footer  -->
+    <div id="footer">
+        <p>
+            Copyright &copy; 2024 - CSE, NJUST
+        </p>
+    </div>
+
+</body>
+
+</html>
