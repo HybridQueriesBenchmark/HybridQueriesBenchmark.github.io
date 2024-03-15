@@ -3,6 +3,7 @@
     margin: 30px auto;
     border: 1px solid #bebebe;
     border-radius: 10px;
+    text-align: justify;
 }
 .main .title{
     text-align: center;
@@ -23,6 +24,7 @@
 .main ul li{
     margin: 10px 0;
     font-size: 18px;
+    text-align: justify;
 }
 .main .sub_title{
     margin: 30px 4% 30px 4%;

@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="KD">
+    <meta name="description" content="Hybrid Query Benchmark">
     <meta name="author" content="">
     <!--    Project Name   -->
-    <title>Hybrid Queries Benchmark</title>
+    <title>Hybrid Query Benchmark</title>
 
     <!-- <link rel="shortcut icon" href="./img/main.png" type="image/x-icon"> -->
 
@@ -100,15 +100,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">Hybrid Queries Benchmark</a>
+                <a class="navbar-brand" href="">Hybrid Query Benchmark</a>
             </div>
 
             <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="menuItem"><a href="index.html">Home</a></li>
                     <li class="menuItem"><a href="download.html">Download</a></li>
-                    <!-- <li class="menuItem"><a href="tutorial.html">Tutorial</a></li>
-                    <li class="menuItem"><a href="cc.html">Citation & Contact</a></li> -->
+                    <!-- <li class="menuItem"><a href="tutorial.html">Tutorial</a></li> -->
+                    <li class="menuItem"><a href="cc.html">Citation & Contact</a></li>
                     <li class="menuItem"><a
                             href="https://github.com/HybridQueriesBenchmark/HybridQueriesBenchmark.github.io"
                             target="_blank">
@@ -124,7 +124,7 @@
 
     <div class="main">
         <p class="title">
-            Download Dataset and Dataset Format
+            Download Dataset &amp; Dataset Format
         </p>
         <p class="content">
             In this page, we will introduce how to download the dataset and the dataset format.
@@ -135,7 +135,7 @@
         <p class="content">
             You can get the datasets from the <a style="color:#3579f6"
                 href="https://github.com/HybridQueriesBenchmark/HybridQueriesBenchmark.github.io/releases/tag/v1.0.0">GitHub
-                Release Page</a>
+                Release Page</a>.
             <br>
             If you just want to get one dataset, you can download it from the following links:
         </p>
@@ -187,7 +187,7 @@
                 is the reference results of learn queries, and the latter is the reference results of test queries. Both
                 of the files are in the form of a CSV file. They contain the following columns:
                 <ul>
-                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query.</li>
                     <li><code>max_distance</code>: type is <code>float</code>. This number is the L2 distance between
                         query vector and the 100-th nearest vector. Since there may be multiple vectors with the same
                         distance as the query vector, this property is used to determine whether the query result
@@ -204,10 +204,11 @@
                 are two files in this folder, including <code>learn_filter.csv</code> and <code>test_filter.csv</code>.
                 The columns of the two files are the same, including:
                 <ul>
-                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query.</li>
                     <li><code>expression_num</code>: type is <code>int</code>, the number of sub-expressions in a
-                        boolean expression</li>
-                    <li><code>bool_expression</code>: type is <code>str</code>, the boolean expression of the query</li>
+                        boolean expression.</li>
+                    <li><code>bool_expression</code>: type is <code>str</code>, the boolean expression of the query.
+                    </li>
                 </ul>
             </li>
             <li>
@@ -215,23 +216,62 @@
                 folder, including <code>base_metadata.csv</code>. There are 295,938 rows in this file. The columns of
                 the file are as follows:
                 <ul>
-                    <li><code>id</code>: type is <code>int</code>, the id of the base vector and corresponding metadata
+                    <li><code>id</code>: type is <code>int</code>, the id of the base vector and corresponding metadata.
                     </li>
-                    <li><code>year</code>: type is <code>int</code></li>
-                    <li><code>month</code>: type is <code>int</code></li>
+                    <li><code>year</code>: type is <code>int</code>.</li>
+                    <li><code>month</code>: type is <code>int</code>.</li>
                     <li><code>day</code>: type is <code>int</code>. The three columns represent when the images were
-                        taken in the Danish Fungi dataset</li>
-                    <li><code>countryCode</code>: type is <code>str</code>, country where the images were token</li>
+                        taken in the Danish Fungi dataset.</li>
+                    <li><code>countryCode</code>: type is <code>str</code>, country where the images were token.</li>
                     <li><code>scientificName</code>: type is <code>str</code>, the scientific name the fungi in original
-                        image</li>
-                    <li><code>Substrate</code>: type is <code>str</code>, the substrate of the fungi in original image
+                        image.</li>
+                    <li><code>Substrate</code>: type is <code>str</code>, the substrate of the fungi in original image.
                     </li>
-                    <li><code>Latitude</code>: type is <code>float</code>, the latitude that the image token in</li>
-                    <li><code>Longitude</code>: type is <code>float</code>, the longitude that the image token in</li>
-                    <li><code>Habitat</code>: type is <code>str</code>, the habitat of the fungi in original image</li>
+                    <li><code>Latitude</code>: type is <code>float</code>, the latitude that the image token in.</li>
+                    <li><code>Longitude</code>: type is <code>float</code>, the longitude that the image token in.</li>
+                    <li><code>Habitat</code>: type is <code>str</code>, the habitat of the fungi in original image.</li>
                     <li><code>poisonous</code>: type is <code>bool</code>, whether the fungi specie is poisonous to
-                        human</li>
+                        humans.</li>
                 </ul>
+                When creating the table, remember to add the additional column <code>embedding</code> to store the
+                feature vectors
+                in the <code>base_vectors.npy</code> file. Here is an example SQL script to create the table for this
+                dataset:
+                <div class="code">
+                    <pre><code class="language-sql">DROP TABLE if exists `fungis`;
+CREATE TABLE `fungis` (
+    id int,
+    year int,
+    month int,
+    day int,
+    countryCode char(2),
+    scientificName varchar(110),
+    Substrate varchar(50),
+    Latitude float,
+    Longitude float,
+    Habitat varchar(60),
+    poisonous boolean,
+    embedding vector(768),
+    primary key (id)
+);</code></pre>
+                </div>
+                After creating the table, inserting the data and creating necessary indices, you can use the following
+                SQL to query the data and use
+                the returned ids to calculate the metric.
+                <div class="code">
+                    <pre><code class="language-sql">SELECT
+    id
+FROM
+    fungis
+WHERE
+    poisonous == 0
+    and Substrate != 'cones'
+    or Habitat == 'nan'
+    and day >= 26
+ORDER BY
+    L2Distance(input, embedding)
+LIMIT
+    100;</code></pre>
             </li>
             <li>
                 <b>vectors</b>: This folder contains the base vectors, learn vectors and test vectors. There are three
@@ -242,7 +282,7 @@
                 dimension of the three files is the number of vectors, and the second dimension
                 is the dimension of the vector. The vectors are extracted from the images in the Danish Fungi dataset
                 using the pretrained <code>vit_small_patch16_224</code> model in timm library. The rows in the numpy
-                array correspond to the rows in the corresponding csv file, based on which the database can be built and
+                array correspond to the rows in the corresponding CSV file, based on which the database can be built and
                 queries made.
             </li>
         </ul>
@@ -288,7 +328,7 @@
                 is the reference results of learn queries, and the latter is the reference results of test queries. Both
                 of the files are in the form of a CSV file. They contain the following columns:
                 <ul>
-                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query.</li>
                     <li><code>max_distance</code>: type is <code>float</code>. This number is the L2 distance between
                         query vector and the 100-th nearest vector. Since there may be multiple vectors with the same
                         distance as the query vector, this property is used to determine whether the query result
@@ -307,9 +347,9 @@
                 expressions are more complex than the single table dataset, and the columns of the two files are as
                 follows:
                 <ul>
-                    <li><code>id</code>: type is <code>int</code>, the id of the query</li>
-                    <li><code>select_clause</code>: type is <code>str</code> </li>
-                    <li><code>join_clause</code>: type is <code>str</code></li>
+                    <li><code>id</code>: type is <code>int</code>, the id of the query.</li>
+                    <li><code>select_clause</code>: type is <code>str</code>. </li>
+                    <li><code>join_clause</code>: type is <code>str</code>.</li>
                     <li><code>where_clause</code>: type is <code>str</code>. Concatenating these three columns together
                         gives us an SQL-style query, and user can easily translate it into the syntax required by other
                         databases. Here is an example query:
@@ -342,8 +382,8 @@ WHERE
                         <code>conversations.csv</code>: This file contains the metadata of conversations. The columns of
                         the file are as follows:
                         <ul>
-                            <li><code>conversation_id</code>: type is <code>int</code>, the id of the conversation</li>
-                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
+                            <li><code>conversation_id</code>: type is <code>int</code>, the id of the conversation.</li>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie.</li>
                         </ul>
                     </li>
                     <li>
@@ -351,80 +391,61 @@ WHERE
                         as
                         follows:
                         <ul>
-                            <li><code>genre_id</code>: type is <code>int</code>, the id of the genre</li>
-                            <li><code>genre</code>: type is <code>str</code>, the name of the genre</li>
+                            <li><code>genre_id</code>: type is <code>int</code>, the id of the genre.</li>
+                            <li><code>genre</code>: type is <code>str</code>, the name of the genre.</li>
                         </ul>
                     </li>
                     <li>
                         <code>movies.csv</code>: This file contains the metadata of movies. The columns of the file are
-                        as
-                        follows:
+                        as follows:
                         <ul>
-                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
-                            <li><code>movie_name</code>: type is <code>str</code>, the name of the movie</li>
-                            <li><code>release_year</code>: type is <code>int</code>, the release year of the movie</li>
-                            <li><code>rating</code>: type is <code>float</code>, the rating of the movie</li>
-                            <li><code>votes</code>: type is <code>int</code>, the number of votes of the movie</li>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie.</li>
+                            <li><code>movie_name</code>: type is <code>str</code>, the name of the movie.</li>
+                            <li><code>release_year</code>: type is <code>int</code>, the release year of the movie.</li>
+                            <li><code>rating</code>: type is <code>float</code>, the rating of the movie.</li>
+                            <li><code>votes</code>: type is <code>int</code>, the number of votes of the movie.</li>
                         </ul>
                     </li>
                     <li>
                         <code>movies_genres.csv</code>: This file contains the metadata of the relationship between
-                        movies
-                        and genres. The columns of the file are as follows:
+                        movies and genres. The columns of the file are as follows:
                         <ul>
-                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
-                            <li><code>genre_id</code>: type is <code>int</code>, the id of the genre</li>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie.</li>
+                            <li><code>genre_id</code>: type is <code>int</code>, the id of the genre.</li>
                         </ul>
                     </li>
                     <li>
                         <code>speakers.csv</code>: This file contains the metadata of speakers. The columns of the file
                         are as follows:
                         <ul>
-                            <li><code>speaker_id</code>: type is <code>int</code>, the id of the speaker</li>
-                            <li><code>character_name</code>: type is <code>str</code>, the name of the character</li>
-                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie</li>
-                            <li><code>gender</code>: type is <code>char</code>, the gender of the speaker in the movie
+                            <li><code>speaker_id</code>: type is <code>int</code>, the id of the speaker.</li>
+                            <li><code>character_name</code>: type is <code>str</code>, the name of the character.</li>
+                            <li><code>movie_id</code>: type is <code>int</code>, the id of the movie.</li>
+                            <li><code>gender</code>: type is <code>char</code>, the gender of the speaker in the movie.
                             </li>
                             <li><code>credit_pos</code>: type is <code>int</code>, the credit position of the speaker in
-                                the movie</li>
+                                the movie.</li>
                         </ul>
                     </li>
                     <li>
                         <code>utterances.csv</code>: This file contains the metadata of utterances. The columns of the
-                        file
-                        are as follows:
+                        file are as follows:
                         <ul>
-                            <li><code>utterance_id</code>: type is <code>int</code>, the id of the utterance</li>
+                            <li><code>utterance_id</code>: type is <code>int</code>, the id of the utterance.</li>
                             <li><code>conversation_id</code>: type is <code>int</code>, the id of the conversation that
-                                the utterance corresponding to</li>
-                            <li><code>speaker_id</code>: type is <code>int</code>, the id of the speaker</li>
+                                the utterance corresponding to.</li>
+                            <li><code>speaker_id</code>: type is <code>int</code>, the id of the speaker.</li>
                             <li><code>reply_to</code>: type is <code>int</code>, the id of the utterance that the
                                 current utterance replies to, <code>-1</code> means that this utterance is first
-                                utterance in the conversation</li>
+                                utterance in the conversation.</li>
                         </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <b>vectors</b>: This folder contains the base vectors, learn vectors and test vectors. There are three
-                files in this folder, including <code>base_vectors.npy</code>, <code>learn_vectors.npy</code> and
-                <code>test_vectors.npy</code>. The three files are in the form of a numpy array. The shape of the three
-                files is <code>(284713, 768)</code>, <code>(10000, 768)</code> and <code>(10000, 768)</code>
-                respectively. The first dimension of the three files is the number of vectors, and the second dimension
-                is the dimension of the vector. The vectors are extracted from the texts in the Cornell Movie-Dialogs Corpus
-                using the pretrained <code>bert-base-uncased</code> model in transformers library. The rows in the numpy
-                array correspond to the rows in the corresponding csv file, based on which the database can be built and
-                queries made.
-            </li>
-        </ul>
-        </p>
-
-        <p class="content">
-            Here is the sample SQL script to create the tables for the multi table movie dataset.
-        </p>
-
-        <div class="code">
-            <pre><code class="language-sql">DROP TABLE if exists `movies`;
+                        When creating the table, remember to add the additional column <code>embedding</code> in table
+                        <code>utterances</code> to store the feature
+                        vectors in the <code>base_vectors.npy</code> file. Here is an example SQL script to create
+                        tables for this
+                        dataset:
+                        <div class="code">
+                            <pre><code class="language-sql">DROP TABLE if exists `movies`;
 CREATE TABLE `movies` (
     movie_id int,
     movie_name varchar(100),
@@ -474,11 +495,48 @@ CREATE TABLE `utterances` (
     conversation_id int references conversations(conversation_id),
     speaker_id int references speakers(speaker_id),
     reply_to int,
+    embedding vector(768),
     primary key (utterance_id),
     foreign key (conversation_id) references conversations(conversation_id),
     foreign key (speaker_id) references speakers(speaker_id)
 );</code></pre>
-        </div>
+                        </div>
+                    </li>
+                </ul>
+                After creating above tables, inserting the data and creating necessary indices, you can use the
+                following
+                SQL to query the data and use the returned ids to calculate the metric.
+                <div class="code">
+                    <pre><code class="language-sql">SELECT
+    DISTINCT utterances.utterance_id
+FROM
+    utterances
+    JOIN conversations ON utterances.conversation_id = conversations.conversation_id
+WHERE
+    utterances.speaker_id > 8935
+    AND utterances.reply_to = -1;
+ORDER BY
+    L2Distance(input, embedding)
+LIMIT
+    100;</code></pre>
+                </div>
+                The <code>DISTINCT</code> in the select clause is because the ids may be duplicated after the JOIN clause (a movie may
+                belong to more than one genre).
+            </li>
+            <li>
+                <b>vectors</b>: This folder contains the base vectors, learn vectors and test vectors. There are three
+                files in this folder, including <code>base_vectors.npy</code>, <code>learn_vectors.npy</code> and
+                <code>test_vectors.npy</code>. The three files are in the form of a numpy array. The shape of the three
+                files is <code>(284713, 768)</code>, <code>(10000, 768)</code> and <code>(10000, 768)</code>
+                respectively. The first dimension of the three files is the number of vectors, and the second dimension
+                is the dimension of the vector. The vectors are extracted from the texts in the Cornell Movie-Dialogs
+                Corpus
+                using the pretrained <code>bert-base-uncased</code> model in transformers library. The rows in the numpy
+                array correspond to the rows in the corresponding csv file, based on which the database can be built and
+                queries made.
+            </li>
+        </ul>
+        </p>
 
     </div>
 
