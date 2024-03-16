@@ -17,7 +17,7 @@ The original license of Danish Fungi Dataset is [here](LICENSE-fungi) and the or
 
 
 
-
+## References
 
 1. Picek L, Šulc M, Matas J, et al. Danish fungi 2020-not just another image recognition dataset[C]//Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2022: 1525-1535.
 2. Danescu-Niculescu-Mizil C, Lee L. Chameleons in imagined conversations: A new approach to understanding coordination of linguistic style in dialogs[J]. arXiv preprint arXiv:1106.3077, 2011.
