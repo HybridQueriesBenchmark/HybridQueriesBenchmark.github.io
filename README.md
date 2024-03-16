@@ -1,6 +1,23 @@
-# HybridQueriesBenchmark.github.io
+# Hybrid Query Benchmark
 
 
-This repository is the benchmark for hybrid queries of boolean filter and vector similarity search.
 
-There are two datasets, one is based on images and the other is based on texts.
+
+This repository is the benchmark for hybrid query of boolean filter and vector similarity search.
+
+There are two datasets, the single table dataset is based on the Danish Fungi Dataset [1], and the multi table dataset is based on the Cornell Movie-Dialogs Corpus [2]. For more information about the dataset, please refer to the [homepage](https://hybridqueriesbenchmark.github.io/).
+
+
+
+
+
+## Disclaimer
+
+The original license of Danish Fungi Dataset is [here](LICENSE-fungi) and the original license of Cornell Movie-Dialogs Corpus is [here](LICENSE-movie), please comply with the original open source license of the dataset.
+
+
+
+
+
+1. Picek L, Šulc M, Matas J, et al. Danish fungi 2020-not just another image recognition dataset[C]//Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2022: 1525-1535.
+2. Danescu-Niculescu-Mizil C, Lee L. Chameleons in imagined conversations: A new approach to understanding coordination of linguistic style in dialogs[J]. arXiv preprint arXiv:1106.3077, 2011.
