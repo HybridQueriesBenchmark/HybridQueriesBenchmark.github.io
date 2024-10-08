@@ -8,7 +8,9 @@ This repository is the benchmark for hybrid query of boolean filter and vector s
 There are two datasets, the single table dataset is based on the Danish Fungi Dataset [1], and the multi table dataset is based on the Cornell Movie-Dialogs Corpus [2]. For more information about the dataset, please refer to the [homepage](https://hybridqueriesbenchmark.github.io/).
 
 
+## Load dataset and do queries
 
+Scripts in `experiments` show you how to load data of the benchmark into database and do queries. You need to install DBMS server in your machine, download and unzip the benchmark, and modify the `path`, `host` and `port` in the scripts to do queries.
 
 
 ## Disclaimer
